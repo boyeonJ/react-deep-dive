@@ -13,5 +13,5 @@
 01. Core에서 Hook 가져오기
 02. 외부 주입 역할을 하는(의존성 관리) ReactSharedInternals.js와 shared 패키지 
 
-> 원문: https://goidle.github.io/
+> 원문: https://goidle.github.io/ <br/>
 > 내 밸로그 정리 기록: https://velog.io/@boyeon_jeong/series/React
