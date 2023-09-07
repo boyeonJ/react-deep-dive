@@ -1,0 +1,31 @@
+React의 element는 컴포넌트의 정보를 담고 있는 모델 객체입니다. JSX와는 다른 개념이며, JSX는 babel을 통해 react.createElement()를 통해 변환되어 React element가 생성됩니다.
+
+Element객체에는 크게 type of, type, key, props, ref가 저장되어 있습니다.
+```javascript
+
+const App = ({ content }) => <div>{content}</div>
+ReactDOM.render(<App key="1" content="Deep dive react" />, container)
+
+const element = {
+  // This tag allows us to uniquely identify this as a React Element
+  $$typeof: REACT_ELEMENT_TYPE,
+
+  // Built-in properties that belong on the element
+  type: type, // function App()
+  key: key, // 1
+  props: props, // { content: 'deep dive react' }
+  ref: ref, // undefined
+}
+```
+
+1. `$$typeof`: 이 값은 React 엘리먼트를 유일하게 식별하는 데 사용되는 특별한 마크입니다. 일반적으로 직접 다룰 필요는 없습니다.
+
+2. `type`: 이 부분은 React 엘리먼트의 타입을 나타냅니다. 함수형 컴포넌트인 경우 이곳에는 해당 컴포넌트 함수 자체가 들어갑니다. 호스트 컴포넌트(HTML 요소)의 경우에는 해당 요소의 문자열 이름이 들어갑니다. 예를 들어, `<div>` 요소는 "div"로 표시됩니다.
+
+3. `key`: React에서 리스트나 배열을 렌더링할 때 각 엘리먼트를 고유하게 식별하는 데 사용됩니다. 키(key)는 변경되지 않는 고유한 값이어야 합니다. 여기서는 "1"이 키로 설정되어 있습니다.
+
+4. `props`: 이 부분은 컴포넌트에 전달되는 속성(props)을 나타냅니다. 주어진 코드에서는 `content` 속성에 "Deep dive react" 문자열이 전달되었습니다.
+
+5. `ref`: React에서는 참조(ref)를 사용하여 DOM 요소나 컴포넌트 인스턴스에 접근할 수 있습니다. 이 부분은 ref에 관련된 정보를 포함하며, 주어진 코드에서는 `undefined`로 설정되어 있으므로 참조가 없음을 나타냅니다.
+
+> JSX에서 태그 attribute로 넘겨준 값중에 key와 ref를 제외하고는 모두 props에 저장됩니다. 
