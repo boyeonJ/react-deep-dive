@@ -16,6 +16,7 @@
 01. Core에서 Hook 가져오기
 02. 외부 주입 역할을 하는(의존성 관리) ReactSharedInternals.js와 shared 패키지
 03. Hook과 랜더링, 총정리
+04. dispatch 함수
 
 
 
